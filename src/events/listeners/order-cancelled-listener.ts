@@ -1,6 +1,5 @@
-import { Listener, OrderCancelledEvent } from '@om_tickets/common';
+import { Listener, OrderCancelledEvent, Subjects } from '@om_tickets/common';
 import { Message } from 'node-nats-streaming';
-import { Subjects } from '../../../../common/src';
 import queueGroupName from './queue-group-name';
 import Ticket from '../../models/ticket';
 import TicketUpdatedPublisher from '../publishers/ticket-updated-publisher';

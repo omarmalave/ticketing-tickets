@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
 import pino from 'pino';
+import { connect } from 'mongoose';
 import app from './app';
 import natsWrapper from './nats-wrapper';
 import OrderCreatedListener from './events/listeners/order-created-listener';
@@ -14,7 +14,7 @@ const connectToMongo = async () => {
     throw new Error('MONGO_URI must be defined');
   }
 
-  await mongoose.connect(MONGO_URI, {
+  await connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
